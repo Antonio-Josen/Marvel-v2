@@ -1,0 +1,17 @@
+<div class="m-6 mt-16 mr-24 ml-24">
+    <ul class="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-6 ">
+      @for (character of marvelList(); track $index) {
+      <div class="border-black hover:text-red-500 hover:font-bold ">
+        <li
+          class="relative overflow-hidden shadow shadow-blue-500/40 hover:shadow-indigo-500/50 transition-transform duration-500 transform hover:-translate-y-4 hover:shadow-lg">
+        <a [routerLink]="['/Historia',character.id]" routerLinkActive="active" ariaCurrentWhenActive="location"
+            target="_self"> 
+            <img class="min-w-full min-h-auto sm-col sm:w-48 sm:h-72 md:w-72 md:h-96"
+              [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="{{ character.title }}">
+          </a> 
+        </li>
+        <p class="text-center mt-6 font-Monaco text-base text-black">{{ character.title }}</p>
+      </div>
+      }
+    </ul>
+  </div>
